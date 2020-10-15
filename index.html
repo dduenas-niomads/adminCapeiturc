@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="./img/logo.png" rel="icon">
+    <title>Capeiturc Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/Linearicons/Font/demo-files/demo.css">
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="plugins/apexcharts-bundle/dist/apexcharts.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="ps-main">
+        <div class="ps-main__sidebar">
+            <div class="ps-sidebar">
+                <div class="ps-sidebar__top">
+                    <div class="ps-block--user-wellcome">
+                        <div class="ps-block__left"><img src="img/user/admin.jpg" alt="" /></div>
+                        <div class="ps-block__right">
+                            <p>Bienvenido,<a href="#">Daniel</a></p>
+                        </div>
+                        <div class="ps-block__action"><a href="#"><i class="icon-exit"></i></a></div>
+                    </div>
+                    <div class="ps-block--earning-count"><small>Ganancias</small>
+                        <h3>S/ 12,560.55</h3>
+                    </div>
+                </div>
+                <div class="ps-sidebar__content">
+                    <div class="ps-sidebar__center">
+                        <ul class="menu">
+                            <li><a class="active" href="index.html"><i class="icon-home"></i>Dashboard</a></li>
+                            <li><a href="products.html"><i class="icon-database"></i>Productos</a></li>
+                            <li><a href="orders.html"><i class="icon-bag2"></i>Órdenes</a></li>
+                            <li><a href="#"><i class="icon-users2"></i>Clientes</a></li>
+                            <li><a href="#"><i class="icon-percent-circle"></i>Cupones</a></li>
+                            <li><a href="#"><i class="icon-papers"></i>Categorías</a></li>
+                            <li><a href="#"><i class="icon-cog"></i>Configuraciones</a></li>
+                        </ul>
+                    </div>
+                    <div class="ps-sidebar__footer">
+                        <div class="ps-copyright"><img src="img/logo.png" width="50" alt="">
+                            <p>&copy;2020 Capeiturc marketplace. <br/> All rights reversed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-main__wrapper">
+            <header class="header--dashboard">
+                <div class="header__left">
+                    <h3>Dashboard</h3>
+                    <p>Información general</p>
+                </div>
+                <div class="header__center">
+                    <form class="ps-form--search-bar" action="index.html" method="get">
+                        <input class="form-control" type="text" placeholder="Buscar...">
+                        <button><i class="icon-magnifier"></i></button>
+                    </form>
+                </div>
+                <div class="header__right"><a class="header__site-link" href="#"><span>Ver tu tienda</span><i class="icon-exit-right"></i></a></div>
+            </header>
+            <section class="ps-dashboard">
+                <div class="ps-section__left">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="ps-card ps-card--sale-report">
+                                <div class="ps-card__header">
+                                    <h4>Reporte de ventas</h4>
+                                </div>
+                                <div class="ps-card__content">
+                                    <div id="chart"></div>
+                                </div>
+                                <div class="ps-card__footer">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p>Productos vendidos</p>
+                                        </div>
+                                        <div class="col-md-4"><a href="#">Exportar reporte<i class="icon icon-cloud-download ml-2"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="ps-card ps-card--earning">
+                                <div class="ps-card__header">
+                                    <h4>Ganancias</h4>
+                                </div>
+                                <div class="ps-card__content">
+                                    <div class="ps-card__chart">
+                                        <div id="donut-chart"></div>
+                                        <div class="ps-card__information"><i class="icon icon-wallet"></i><strong>S/ 12 560</strong><small>Balance</small></div>
+                                    </div>
+                                    <div class="ps-card__status">
+                                        <p class="yellow"><strong> S/ 20 199</strong><span>Ingreso</span></p>
+                                        <p class="red"><strong> S/ 1 021</strong><span>Impuestos</span></p>
+                                        <p class="green"><strong> S/ 992.00</strong><span>Comisiones</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ps-card">
+                        <div class="ps-card__header">
+                            <h4>Órdenes recientes</h4>
+                        </div>
+                        <div class="ps-card__content">
+                            <div class="table-responsive">
+                                <table class="table ps-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Fecha</th>
+                                            <th>Productos</th>
+                                            <th>Pago</th>
+                                            <th>Estado</th>
+                                            <th>Total</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#A580</td>
+                                            <td><strong> Ago, 15, 2020</strong></td>
+                                            <td><a href="#"><strong>Unero Black Military</strong></a></td>
+                                            <td><span class="ps-badge success">Pagado</span>
+                                            </td>
+                                            <td><span class="ps-fullfillment success">Entregado</span>
+                                            </td>
+                                            <td><strong>S/ 56.00</strong></td>
+                                            <td>
+                                                <div class="dropdown"><a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-ellipsis"></i></a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#B260</td>
+                                            <td><strong> Ago, 15, 2020</strong></td>
+                                            <td><a href="#"><strong>Marsh Speaker</strong></a></td>
+                                            <td><span class="ps-badge gray">Sin pagar</span>
+                                            </td>
+                                            <td><span class="ps-fullfillment success">Entregado</span>
+                                            </td>
+                                            <td><strong>S/ 56.00</strong></td>
+                                            <td>
+                                                <div class="dropdown"><a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-ellipsis"></i></a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#A583</td>
+                                            <td><strong> Ago, 15, 2020</strong></td>
+                                            <td><a href="#"><strong>Lined Blend T-Shirt</strong></a></td>
+                                            <td><span class="ps-badge success">Pagado</span>
+                                            </td>
+                                            <td><span class="ps-fullfillment warning">In Progress</span>
+                                            </td>
+                                            <td><strong>S/ 516.00</strong></td>
+                                            <td>
+                                                <div class="dropdown"><a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-ellipsis"></i></a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#A583</td>
+                                            <td><strong> Ago, 15, 2020</strong></td>
+                                            <td><a href="#"><strong>DJI MAcvic Quadcopter</strong></a></td>
+                                            <td><span class="ps-badge gray">Sin pagar</span>
+                                            </td>
+                                            <td><span class="ps-fullfillment success">Entregado</span>
+                                            </td>
+                                            <td><strong>S/ 112.00</strong></td>
+                                            <td>
+                                                <div class="dropdown"><a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-ellipsis"></i></a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#A112</td>
+                                            <td><strong> Ago, 15, 2020</strong></td>
+                                            <td><a href="#"><strong>Black T-Shirt</strong></a></td>
+                                            <td><span class="ps-badge success">Pagado</span>
+                                            </td>
+                                            <td><span class="ps-fullfillment danger">Cancelar</span>
+                                            </td>
+                                            <td><strong>S/ 30.00</strong></td>
+                                            <td>
+                                                <div class="dropdown"><a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-ellipsis"></i></a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="ps-card__footer"><a class="ps-card__morelink" href="Órdenes.htmls">Ver todas las órdenes<i class="icon icon-chevron-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="ps-section__right">
+                    <section class="ps-card ps-card--statics">
+                        <div class="ps-card__header">
+                            <h4>Estadísticas</h4>
+                            <div class="ps-card__sortby"><i class="icon-calendar-empty"></i>
+                                <div class="form-group--select">
+                                    <select class="form-control">
+                                        <option value="1">Últimos 30 días</option>
+                                        <option value="2">Últimos 90 días</option>
+                                        <option value="3">Últimos 180 días</option>
+                                    </select><i class="icon-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-card__content">
+                            <div class="ps-block--stat yellow">
+                                <div class="ps-block__left"><span><i class="icon-cart"></i></span></div>
+                                <div class="ps-block__content">
+                                    <p>Órdenes</p>
+                                    <h4>254<small class="asc"><i class="icon-arrow-up"></i><span>12,5%</span></small></h4>
+                                </div>
+                            </div>
+                            <div class="ps-block--stat pink">
+                                <div class="ps-block__left"><span><i class="icon-cart"></i></span></div>
+                                <div class="ps-block__content">
+                                    <p>Solicitudes</p>
+                                    <h4>S/ 6,260<small class="asc"><i class="icon-arrow-up"></i><span>7.1%</span></small></h4>
+                                </div>
+                            </div>
+                            <div class="ps-block--stat green">
+                                <div class="ps-block__left"><span><i class="icon-cart"></i></span></div>
+                                <div class="ps-block__content">
+                                    <p>Solicitudes</p>
+                                    <h4>S/ 2,567<small class="desc"><i class="icon-arrow-down"></i><span>0.32%</span></small></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="ps-card ps-card--top-country">
+                        <div class="ps-card__header">
+                            <h4>Países top</h4>
+                        </div>
+                        <div class="ps-card__content">
+                            <div class="row">
+                                <div class="col-6">
+                                    <figure class="organge">
+                                        <figcaption>Estados Unidos</figcaption><strong>40%</strong>
+                                    </figure>
+                                </div>
+                                <div class="col-6">
+                                    <figure class="red">
+                                        <figcaption>China</figcaption><strong>35%</strong>
+                                    </figure>
+                                </div>
+                                <div class="col-6">
+                                    <figure class="green">
+                                        <figcaption>España</figcaption><strong>15%</strong>
+                                    </figure>
+                                </div>
+                                <div class="col-6">
+                                    <figure class="cyan">
+                                        <figcaption>Panamá</figcaption><strong>10%</strong>
+                                    </figure>
+                                </div>
+                            </div><img src="img/map-and-bundle.png" alt="">
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="plugins/jquery.min.js"></script>
+    <script src="plugins/popper.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/jquery.matchHeight-min.js"></script>
+    <script src="plugins/select2/dist/js/select2.full.min.js"></script>
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="plugins/apexcharts-bundle/dist/apexcharts.min.js"></script>
+    <script src="js/chart.js"></script>
+    <!-- custom code-->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
